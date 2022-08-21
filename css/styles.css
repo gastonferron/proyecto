@@ -188,3 +188,44 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+/* login */
+
+.loginStyle{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+
+ }  
+.mt-5{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.formulario_login{
+  width: 400px;
+  position: absolute;
+  border-radius: 5px;
+  padding: 30px 60px;
+  top: 50%;
+  text-align: center;
+
+}
+.formulario_login input,label,button{
+  display: block;
+  width: 100%;
+  margin: 5px;
+}
+.formulario_login input{
+  height: 40px;
+  border: 2px solid #0594bb;
+}
+.formulario_login button{
+  margin-top: 15px;
+  cursor: pointer;
+  border: none;
+  height: 40px;
+  background-color: white;
+  box-shadow: 1px 1px 2px;
+  color: #0594bb;
+}
