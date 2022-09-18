@@ -1,20 +1,30 @@
-const email = document.getElementById("input_correo");
-const password = document.getElementById("input_pass");
-const boton = document.getElementById("boton");
-const btnClose = document.querySelector(".btn-close");
-btnClose.addEventListener("click", () => {
-    document.getElementById("alert-danger").classList.remove("show");
-})
+let email = document.getElementById("input_correo");
+let password = document.getElementById("input_pass");
+let boton = document.getElementById("boton");
 
-function showAlertError() {
-    document.getElementById("alert-danger").classList.add("show");
-}
+//EventListener
 
 boton.addEventListener("click", () => {
     if (password.value.length >= 1  && email.value.length >= 1){
+        
+        ingresarUsuario();
         window.location.href = "home.html";
+       
     }
     else{
         showAlertError();
     } 
-  });
+  })
+
+//Funciones
+
+//Guarda el usuario
+function ingresarUsuario(){
+    localStorage.setItem("usuario", email.value);
+  }
+
+//Alertas
+
+function showAlertError() {
+    document.getElementById("alert-danger").classList.add("show");
+}

@@ -1,6 +1,7 @@
+const usuario = localStorage.getItem("usuario");
 const CATEGORIES_URL = "https://japceibal.github.io/emercado-api/cats/cat.json";
 const PUBLISH_PRODUCT_URL = "https://japceibal.github.io/emercado-api/sell/publish.json";
-const PRODUCTS_URL = "https://japceibal.github.io/emercado-api/cats_products/101.json";
+const PRODUCTS_URL = "https://japceibal.github.io/emercado-api/cats_products/"+localStorage.getItem("catID")+".json";
 const PRODUCT_INFO_URL = "https://japceibal.github.io/emercado-api/products/";
 const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/products_comments/";
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
@@ -39,3 +40,17 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+//Agregar nombre de usuario a la barra de navegar
+document.addEventListener("DOMContentLoaded",()=> {
+  
+  document.querySelector("ul").innerHTML += 
+  `<li class="nav-item">
+    <a class="nav-link" href="" id="contenedor"></a>
+  </li>` ;
+
+  document.getElementById("contenedor").innerHTML = usuario ;
+
+})
+  
+

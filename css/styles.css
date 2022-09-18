@@ -189,7 +189,7 @@ a.custom-card:hover {
   color: orange;
 }
 
-/* login */
+ /* login */
 
 .loginStyle{
   margin: 0;
@@ -228,4 +228,14 @@ a.custom-card:hover {
   background-color: white;
   box-shadow: 1px 1px 2px;
   color: #0594bb;
+}
+/* Home */
+
+#contenedor{
+  color: white;
+}
+
+/*Iconos Products */
+.iconos{
+  width: 300%;
 }
