@@ -4,6 +4,7 @@ let boton_Comentar = document.getElementById("boton_Comentar");
 let currentProductInfo = "";
 let currentProductComentarios=[];
 
+//Aun no funciona
 function guardarComentario(){
     comentarios += `
                     <div class="list-group-item list-group-item-action cursor-active">
@@ -21,7 +22,26 @@ function guardarComentario(){
         
         document.getElementById("lista_comentarios").innerHTML = comentarios;
 }
-
+//Asigna nuevo id
+function setProductId(id) {
+    localStorage.setItem("productID", id);
+    window.location.reload();
+}
+//Recorre array objetos
+function verRelacionados(){
+    let rel="";
+    for (let i = 0; i < currentProductInfo.relatedProducts.length; i++) {
+        rel += `<div class="col-6" onclick="setProductId(${currentProductInfo.relatedProducts[i].id})">
+                <p class="nombre_relacionado">${currentProductInfo.relatedProducts[i].name}</p> 
+                    <div> 
+                       <img src="${currentProductInfo.relatedProducts[i].image}"class="img-thumbnail"></img>  
+                    </div>
+                </div>
+               `
+    }
+    document.getElementById("lista_relacionados").innerHTML = rel;
+}
+//Recorre images
 function verImagenes(){
     let imagen="";
         for(let i = 0; i < currentProductInfo.images.length; i++){
@@ -33,8 +53,8 @@ function verImagenes(){
          }
          return imagen;
 }
-
-function showProductsList(){       
+//Ver el producto
+function showPorduct(){       
         let htmlContentToAppend = `
         <h1 class="mb-1">${currentProductInfo.name}</h1>
             <div>
@@ -62,7 +82,7 @@ function showProductsList(){
             `
         document.getElementById("lista_currentProductInfo").innerHTML = htmlContentToAppend;
 }
-
+//Ver comentarios
 function showComents(){
     let comentarios="";
         for(let i = 0; i < currentProductComentarios.length; i++){
@@ -83,6 +103,7 @@ function showComents(){
         }
         document.getElementById("lista_comentarios").innerHTML = comentarios;
 }
+//Asignar estrellas
 function calidad(estrella){
     let variable="";
     for(let i = 0; i < 5; i++){
@@ -98,26 +119,23 @@ function calidad(estrella){
         }
      }
      return variable;
-       
-    
 }
-
+//Traer informacion del producto
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
             currentProductInfo = resultObj.data       
-            console.log(currentProductInfo);
-            showProductsList();
-            guardarComentario()
+            showPorduct();
+            verRelacionados();
         }
 
 
         
     }); 
+//Traer informacion de los comentarios    
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
-            currentProductComentarios = resultObj.data       
-            console.log(currentProductComentarios);
+            currentProductComentarios = resultObj.data
             showComents();
         }
     });   

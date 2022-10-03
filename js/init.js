@@ -49,12 +49,24 @@ let getJSONData = function(url){
 document.addEventListener("DOMContentLoaded",()=> {
   
   document.querySelector("ul").innerHTML += 
-  `<li class="nav-item">
-    <a class="nav-link" href="" id="contenedor"></a>
-  </li>` ;
-
-  document.getElementById("contenedor").innerHTML = usuario ;
+  `
+  <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ${usuario}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="cart.html">Mi Carrito</a></li>
+            <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
+            <li><a class="dropdown-item" onclick="cerrarSesion()">Cerrar Sesion</a></li>
+          </ul>
+        </li>
+  ` ;
 
 })
+
+function cerrarSesion(){
+  localStorage.clear();
+  window.location.href="index.html";
+}
   
 
