@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,10 +38,41 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="row">
+        <div>
+          
+        </div>
+        <div class="list-group" id="lista_currentProductInfo">
+        </div>
+        <div class="list-group" id="lista_comentarios">
+        </div>
+      </div>
+       <div>
+      <div class="agregarComentario">
+        <h3>Opina de nuestro producto</h3>
+          <div class="form-floating">
+            <textarea placeholder="Escribe tu camentario aqui..." rows="3" class="form-control"  id="input_Comentario"></textarea>
+           </div>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="boton_Estrella">
+                Estrellas
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item">1 Estrella</a></li>
+                <li><a class="dropdown-item">2 Estrellas</a></li>
+                <li><a class="dropdown-item">3 Estrellas</a></li>
+                <li><a class="dropdown-item">4 Estrellas</a></li>
+                <li><a class="dropdown-item">5 Estrellas</a></li>
+              </ul>
+            </div>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown"id="boton_Comentar">
+              <button type="button" class="btn btn-primary">Comentar</button>
+          </div>
+        </div>
       </div>
     </div>
+    </div>
+   
   </main>
   <footer class="text-muted">
     <div class="container">

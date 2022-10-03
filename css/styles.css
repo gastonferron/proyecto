@@ -239,3 +239,11 @@ a.custom-card:hover {
 .iconos{
   width: 300%;
 }
+/* product info */
+
+.precio{
+  font-size: 40px;
+}
+.titulo_descripcion{
+  font-size: 20px;
+}

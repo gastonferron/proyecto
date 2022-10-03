@@ -37,6 +37,11 @@ function sortProducts(criteria, array){
     return result;
 }
 
+function setProductId(id) {
+    localStorage.setItem("productID", id);
+    window.location = "product-info.html"
+}
+
 function showProductsList(){
 
     let htmlContentToAppend = "";
@@ -47,7 +52,7 @@ function showProductsList(){
         ((maximoCant == undefined) || (maximoCant != undefined && parseInt(productos.cost) <= maximoCant))){
 
             htmlContentToAppend += `
-            <div class="list-group-item list-group-item-action cursor-active">
+            <div onclick="setProductId(${productos.id})" class="list-group-item list-group-item-action cursor-active">
                 <div class="row">
                     <div class="col-3">
                         <img src="${productos.image}" alt="${productos.description}" class="img-thumbnail">
