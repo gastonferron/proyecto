@@ -128,9 +128,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             showPorduct();
             verRelacionados();
         }
-
-
-        
     }); 
 //Traer informacion de los comentarios    
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){

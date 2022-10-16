@@ -37,9 +37,50 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="text-center p-4">
+        <h2>Carrito de Compras</h2>
+        <hr></hr>
       </div>
+      <div>
+        <section class="container content-section">
+          <div class="cart-row">
+              <span class="cart-item cart-header cart-column">Productos</span>
+              <span class="cart-price cart-header cart-column">Precio</span>
+              <span class="cart-price cart-header cart-column">Cantidad</span>
+              <span class="cart-quantity cart-header cart-column">Subtotal</span>
+          </div>
+        <div class="list-group" id="lista_currentCartInfo"></div>
+      <div class="cart_Envios">
+        <h3>Tipo de envio</h3>
+        <div>
+          <div class="tipo_Envio">
+            <p>
+                <input type="radio" name="hm" value="h"> Premium de 2 a 5 dias (15%)
+            </p>
+            <p>
+              <input type="radio" name="hm" value="h"> Express 5 a 8 dias (7%)
+          </p>
+          <p>
+            <input type="radio" name="hm" value="h"> Standard 12 a 15 dias (5%)
+          </p>
+        </div>
+        <div class="direccion_Envio">
+            <p>Calle
+                <input type="text" name="calle_Envio">
+            </p>
+            <p>Numero
+                <input type="text" name="numero_Envio">
+            </p>
+            <p>Esquina
+                <input type="text" name="esquina_Envio">
+            </p>
+            <p>
+                <input type="submit" name="Enviar" value="Enviar">
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
   <footer class="text-muted">
