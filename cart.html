@@ -37,50 +37,120 @@
   </nav>
   <main>
     <div class="container">
+      <form class="row mt-4 needs-validation" novalidate>
       <div class="text-center p-4">
         <h2>Carrito de Compras</h2>
         <hr></hr>
       </div>
-      <div>
-        <section class="container content-section">
-          <div class="cart-row">
-              <span class="cart-item cart-header cart-column">Productos</span>
-              <span class="cart-price cart-header cart-column">Precio</span>
-              <span class="cart-price cart-header cart-column">Cantidad</span>
-              <span class="cart-quantity cart-header cart-column">Subtotal</span>
+          <div>
+            
+              <div class="list-group" id="lista_currentCartInfo"></div>
           </div>
-        <div class="list-group" id="lista_currentCartInfo"></div>
       <div class="cart_Envios">
         <h3>Tipo de envio</h3>
         <div>
           <div class="tipo_Envio">
-            <p>
-                <input type="radio" name="hm" value="h"> Premium de 2 a 5 dias (15%)
-            </p>
-            <p>
-              <input type="radio" name="hm" value="h"> Express 5 a 8 dias (7%)
-          </p>
-          <p>
-            <input type="radio" name="hm" value="h"> Standard 12 a 15 dias (5%)
-          </p>
+            <div>
+              <input type="radio" name="hm" required id="premium"> 
+              <label for="premium">Premium de 2 a 5 dias (15%)</label>
+            </div>
+            <div>
+              <input type="radio" name="hm" required id="express"> 
+              <label for="express">Express 5 a 8 dias (7%)</label>
+            </div>
+            <div>
+              <input type="radio" name="hm" required id="standard">
+              <label for="standard">Standard 12 a 15 dias (5%)</label>
+            </div>
+          </div>
+          <div class="direccion_Envio">
+            <div class="col-3">
+            <label>Calle
+                <input type="text" name="calle_Envio" class="form-control" required id="calle">
+            </label>
+            <label>Numero
+                <input type="text" name="numero_Envio" class="form-control" required id="numero">
+            </label>
+            <label>Esquina
+                <input type="text" name="esquina_Envio" class="form-control" required id="esquina">
+            </label>
+            </div>
+
+          </div>
+
         </div>
-        <div class="direccion_Envio">
-            <p>Calle
-                <input type="text" name="calle_Envio">
-            </p>
-            <p>Numero
-                <input type="text" name="numero_Envio">
-            </p>
-            <p>Esquina
-                <input type="text" name="esquina_Envio">
-            </p>
-            <p>
-                <input type="submit" name="Enviar" value="Enviar">
-            </p>
+        <div class="costos_Envio">
+          <h3>Costos</h3>
+          <div>
+            <div class="list-group" id="lista_Costos"></div>
+            <hr>
+          </div>
+          <div>
+            <h3>Forma de Pago</h3>
+            <input type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Seleccionar
+            <button type="submit" class="btn btn-primary">
+              Finalizar Compra
+            </button>
+            
+            
+        
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Formas de Pago</h5>
+                  </div>
+                  <div class="modal-body">
+                    <label>
+                      <input type="radio" name="modal-nombres" required id="tarjeta_credito"> Tarjeta de Credito
+                  </label>
+                  <hr>
+
+                    <div class="col-sm-6">
+                      <label for="tarjeta" class="form-label">Numero de Tarjeta</label>
+                      <input type="text" class="form-control" required id="tarjeta">
+                      <div class="invalid-feedback">
+                        Ingrese numero de tarjeta
+                      </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <label for="codigo" class="form-label">Codigo de Seguridad</label>
+                        <input type="text" class="form-control" required id="codigo">
+                        <div class="invalid-feedback">
+                          Ingrese codigo seguridad
+                        </div>
+                      </div>
+                        <div class="col-sm-6">
+                          <label for="vencimiento" class="form-label">Vencimiento (MM/AA)</label>
+                          <input type="text" class="form-control" required id="vencimiento">
+                          <div class="invalid-feedback">
+                            Ingrese una fecha
+                          </div>
+                        </div>
+                        
+                        <label>
+                          <input type="radio" name="modal-nombres" required id="transferencia_bancaria"> Transferencia Bancaria
+                      </label>
+                      <div class="col-sm-6">
+                        <label for="cuentaBancaria" class="form-label">Numero de Cuenta</label>
+                        <input type="text" class="form-control" required id="cuentaBancaria">
+                        <div class="invalid-feedback">
+                          Ingrese su Cuenta Bancaria
+                        </div>
+                      </div>
+                  
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
+    </form>
     </div>
   </main>
   <footer class="text-muted">
