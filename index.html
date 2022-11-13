@@ -21,13 +21,23 @@
 
         <form class="formulario_login">
 
-          <label>Email</label>
-          <input type="text" id="input_correo" placeholder="correo@email.com" autocomplete="off">
+          <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" required id="input_correo">
+            <div class="invalid-feedback">
+              Debe ingresar un email.
+            </div>
+          </div>
 
-          <label>Contraseña</label>
-          <input type="password" id="input_pass" placeholder="contraseña">
+          <div class="col-12">
+            <label for="contraseña" class="form-label">Contraseña</label>
+            <input type="password" minlength="1" class="form-control" required id="input_pass">
+            <div class="invalid-feedback">
+              Debe ingresar una contraseña con al menos 6 caracteres.
+            </div>
+          </div>
 
-          <button type="button" id="boton">Entrar</button>
+          <button type="button" id="boton" class="btn btn-primary">Entrar</button>
 
         </form>
      

@@ -1,3 +1,4 @@
+let formulario = document.getElementById("form");
 let email = document.getElementById("input_correo");
 let password = document.getElementById("input_pass");
 let boton = document.getElementById("boton");

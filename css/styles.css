@@ -220,7 +220,7 @@ a.custom-card:hover {
   height: 40px;
   border: 2px solid #0594bb;
 }
-.formulario_login button{
+.formulario_login button{ 
   margin-top: 15px;
   cursor: pointer;
   border: none;
@@ -235,17 +235,11 @@ a.custom-card:hover {
   color: white;
 }
 
+.clasificacion
+
 /*Iconos Products */
 .iconos{
   width: 300%;
-}
-/* product info */
-
-.precio{
-  font-size: 40px;
-}
-.titulo_descripcion{
-  font-size: 20px;
 }
 /* Carrito */
 .img-article{
