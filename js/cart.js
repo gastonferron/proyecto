@@ -149,7 +149,7 @@ function habilitar (){
 //Actualiza los buttons al clickearlos
 divRadio.addEventListener("click", () => {
     costoEnvios();
-    showCostos();
+    showCostos();   
 } );
 //Ejecuta la funcion habilitar
 modalPago.addEventListener("click", () =>{
@@ -164,7 +164,6 @@ modalPago.addEventListener("input", () => {
 function alerta(){
     document.getElementById("alerta").classList.add("show");
 }
-
 (function () {
     'use strict'
     var forms = document.querySelectorAll('.needs-validation')
@@ -174,18 +173,17 @@ function alerta(){
             event.preventDefault()
             event.stopPropagation()
             if (form.checkValidity()) {
-                alerta()
+                alerta();
                 document.querySelector('#alerta button').addEventListener("click" , () => form.submit() );
           }
           form.classList.add('was-validated')
         }, false)
       })
   })()
-
-    getJSONData(CART_INFO_URL).then(function(resultObj){
-        if (resultObj.status === "ok"){
-            currentCartInfo = resultObj.data 
-            showCart();
-            showCostos()
-        }
-    }); 
+getJSONData(CART_INFO_URL).then(function(resultObj){
+    if (resultObj.status === "ok"){
+        currentCartInfo = resultObj.data 
+        showCart();
+        showCostos()
+    }
+}); 

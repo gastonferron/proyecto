@@ -1,4 +1,4 @@
-const usuario = localStorage.getItem("usuario");
+const usuario = localStorage.getItem("email");
 const numCatId = localStorage.getItem("catID");
 const numProductId= localStorage.getItem("productID");
 
@@ -45,9 +45,14 @@ let getJSONData = function(url){
     });
 }
 
-//Agregar nombre de usuario a la barra de navegar
+
 document.addEventListener("DOMContentLoaded",()=> {
-  
+//Comprueba si esta logueado
+  if(localStorage.getItem("email") == null || !localStorage.getItem("email").length){
+    localStorage.clear();
+    window.location.replace("index.html")
+  }
+  //Agregar nombre de usuario a la barra de navegar
   document.querySelector("ul").innerHTML += 
   `
   <li class="nav-item dropdown">
@@ -66,7 +71,5 @@ document.addEventListener("DOMContentLoaded",()=> {
 
 function cerrarSesion(){
   window.location.href="index.html";
-  localStorage.clear;
+  localStorage.removeItem("email");
 }
-  
-

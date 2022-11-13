@@ -21,7 +21,7 @@ boton.addEventListener("click", () => {
 
 //Guarda el usuario
 function ingresarUsuario(){
-    localStorage.setItem("usuario", email.value);
+    localStorage.setItem("email", email.value);
   }
 
 //Alertas
